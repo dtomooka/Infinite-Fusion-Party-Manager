@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Session Select
+{% endblock %}
+
+{% include 'navbar.html' %}
+
+{% block main %}
+<table class="table table-hover table-bordered table-striped">
+    {% for player in players %}
+        <tr>
+            <td>Player Id: {{ player.id }}</td>
+            <td>{{ player.name }}</td>
+            <td>Session Id: {{ player.session.id }} // Session Number: {{ player.session.session_num }}</td>
+            <td>User Id: {{ player.session.user.id }}: // User Name: {{ player.session.user.username }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

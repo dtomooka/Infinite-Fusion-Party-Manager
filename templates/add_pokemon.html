@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Add Pokemon
+{% endblock %}
+
+{% include 'navbar.html' %}
+
+{% block main %}
+    Current Session Number: {{ current_session }}
+    <br>
+    <form method="POST">
+        {% for player in players %}
+            <input name="{{ player.id }}" list="pokedex" class="form-control">
+        {% endfor %}
+        <button class="btn btn-primary">Add Pokemon to Session</button>
+    </form>
+    
+{% endblock %}
+
+{% include 'pokemon_list.html' %}
